@@ -24,11 +24,11 @@ def Cosine(canvas_width, canvas_height, amplitude=1, period=2*np.pi, phase_shift
 def fxCurve(canvas_width, canvas_height, amplitude=1, period=2*np.pi, phase_shift=0, midline=0):
     values = Cosine(canvas_width, canvas_height, amplitude=amplitude, period=period, phase_shift=phase_shift, midline=midline)
     for i in range(len(values)-1):
-        canvas.create_line(i*scale, int(values[i])*scale, (i+1)*scale, int(values[i+1])*scale, fill="blue", width=2)
+        canvas.create_line(i*scale, int(values[i]*scale), (i+1)*scale, int(values[i+1]*scale), fill="blue", width=2)
     
     values = Sine(canvas_width, canvas_height, amplitude=amplitude, period=period, phase_shift=phase_shift, midline=midline)
     for i in range(len(values)-1):
-        canvas.create_line(i*scale, int(values[i])*scale, (i+1)*scale, int(values[i+1])*scale, fill="red", width=2)
+        canvas.create_line(i*scale, int(values[i]*scale), (i+1)*scale, int(values[i+1]*scale), fill="red", width=2)
 
 def updateCanvas(event):
     global origin, g_amplitude, g_period, g_phase_shift, g_midline
